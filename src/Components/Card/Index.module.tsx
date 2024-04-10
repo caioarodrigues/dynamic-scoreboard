@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Button } from "../Button/Index.module";
+import { useCardsContext } from "../../Context/CardsContext";
 
 interface CardProps {
   name: string;
 }
 
 export const Card = ({ name }: CardProps) => {
+  const {  } = useCardsContext();
   const [score, setScore] = useState(0);
 
   return (
-    <div className="bg-blue-400 w-2/5 border border-white rounded-sm">
+    <div className="bg-blue-400 w-full border border-white rounded-sm">
       <div className="text-center">
         <h1>{name}</h1>
         <h2>{score}</h2>
