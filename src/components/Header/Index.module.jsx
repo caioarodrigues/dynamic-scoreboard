@@ -7,6 +7,13 @@ import { useState } from "react";
 export const Header = () => {
   const { createCard } = useCardsContext();
   const [playerName, setPlayerName] = useState("");
+  const createPlayer = () => {
+    console.log(playerName)
+    if (playerName === "")
+      return alert("Please enter a player name");
+
+    createCard(playerName);
+  }
 
   return (
     <header className="bg-gray-800 py-2 text-white flex flex-col justify-between items-center">
@@ -18,7 +25,7 @@ export const Header = () => {
           changeHandler={setPlayerName}
         />
         <Button
-          clickHandler={() => createCard(playerName)}
+          clickHandler={createPlayer}
           name={"new player"}
         />
       </Form>

@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 
+/* eslint-disable react/prop-types */
 export const Input = ({ type, placeholder, value, changeHandler }) => {
   const handleChange = (e) => {
     changeHandler(e.target.value);

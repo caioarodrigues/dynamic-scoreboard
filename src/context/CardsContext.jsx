@@ -12,7 +12,6 @@ export const useCardsContext = () => {
 export const CardsProvider = ({ children }) => {
   const [cards, setCards] = useState([]);
   const createCard = (playerName) => {
-    console.log("createCard", playerName);
     setCards((prevCards) => {
       const newCard = { playerName, score: 0 };
       return [...prevCards, newCard];

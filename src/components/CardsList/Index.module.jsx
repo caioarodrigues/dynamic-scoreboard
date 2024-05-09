@@ -5,9 +5,9 @@ export const CardsList = () => {
   const { cards } = useCardsContext();
 
   return (
-    <div className="flex gap-4">
-      {cards.map((card) => (
-        <Card key={card.playerName} playerName={card.playerName} />
+    <div className="flex flex-wrap gap-2 justify-center pt-2">
+      {cards.map(({ playerName }, index) => (
+        <Card key={index} playerName={playerName} />
       ))}
     </div>
   );

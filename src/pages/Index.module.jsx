@@ -1,10 +1,11 @@
 import { Header } from "../components/Header/Index.module";
+import { CardsList } from "../components/CardsList/Index.module";
 
 function Index() {
   return (
-    <div>
-      <div className="bg-yellow-500">Index.module</div>
+    <div className=" bg-gray-500 h-screen">
       <Header />
+      <CardsList />
     </div>
   );
 }
