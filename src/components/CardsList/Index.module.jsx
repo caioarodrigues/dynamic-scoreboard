@@ -3,7 +3,7 @@ import { useCardsContext } from "../../context/CardsContext";
 
 export const CardsList = () => {
   const { cards } = useCardsContext();
-
+  
   return (
     <div className="flex flex-wrap gap-2 justify-center pt-2">
       {cards.map(({ playerName }, index) => (

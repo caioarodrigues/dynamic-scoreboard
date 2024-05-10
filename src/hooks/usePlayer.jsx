@@ -36,6 +36,12 @@ export default function usePlayer() {
     const card = cards.find((card) => card.player === playerName);
     return card ? card.score : 0;
   };
+  const sortedCards = () => {
+    const newCards = cards.sort((a, b) => b.score - a.score);
+    //setCards(newCards);
 
-  return { removeCard, updateCardScore, getCards, createCard, getScore };
+    return newCards;
+  };
+
+  return { removeCard, updateCardScore, getCards, createCard, getScore, sortedCards };
 }
