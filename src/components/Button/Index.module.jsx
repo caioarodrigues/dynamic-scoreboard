@@ -4,7 +4,7 @@ export const Button = ({ name, clickHandler, type }) => {
     <button
       onClick={clickHandler}
       type={type ? type : "button"}
-      className="bg-blue-300 rounded-md px-1 py-2"
+      className="bg-blue-300 rounded-md px-1 py-2 min-w-8 flex justify-center"
     >
       {name}
     </button>

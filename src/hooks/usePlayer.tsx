@@ -9,10 +9,12 @@ export default function usePlayer() {
       score: 0,
     };
     setCards([...cards, newCard]);
-  }
+  };
   const removeCard = (playerName) => {
-    const newCards = cards.filter((card) => card.player !== playerName);
+    const newCards = cards.filter((card) => card.playerName !== playerName);
     setCards(newCards);
+
+    console.log(newCards);
   };
   const updateCardScore = (playerName, action) => {
     const newCards = cards.map((card) => {
@@ -33,7 +35,7 @@ export default function usePlayer() {
   const getScore = (playerName) => {
     const card = cards.find((card) => card.player === playerName);
     return card ? card.score : 0;
-  }
+  };
 
   return { removeCard, updateCardScore, getCards, createCard, getScore };
 }

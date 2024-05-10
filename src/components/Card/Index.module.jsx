@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Button } from "../Button/Index.module";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
+import { FaMinus } from "react-icons/fa6";
 import usePlayer from "../../hooks/usePlayer";
 
 // eslint-disable-next-line react/prop-types
 export const Card = ({ playerName }) => {
-  const { getScore } = usePlayer();
+  const { removeCard } = usePlayer();
   const [score, setScore] = useState(0);
   const addScore = () => setScore((prevScore) => prevScore + 1);
   const subScore = () =>
@@ -24,9 +26,9 @@ export const Card = ({ playerName }) => {
         <div>{score}</div>
       </div>
       <div className="flex justify-between">
-        <Button name="Add" clickHandler={addScore} />
-        <Button name="Sub" clickHandler={subScore} />
-        <Button name={<FaRegTrashAlt />} />
+        <Button name={<FaPlus />} clickHandler={addScore} />
+        <Button name={<FaMinus />} clickHandler={subScore} />
+        <Button name={<FaRegTrashAlt />} clickHandler={() => removeCard(playerName)} />
       </div>
     </div>
   );
