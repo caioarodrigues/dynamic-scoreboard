@@ -28,7 +28,8 @@ export const Header = () => {
   };
 
   return (
-    <header className="bg-gray-800 py-2 text-white flex flex-col justify-between items-center">
+    <header className="bg-gray-800 py-2 text-white flex flex-col justify-between 
+      items-center md:flex-row md:gap-2 md:justify-center">
       <h1 className="text-xl font-bold">Scoreboard</h1>
       <Form>
         <input

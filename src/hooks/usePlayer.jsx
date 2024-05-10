@@ -13,18 +13,16 @@ export default function usePlayer() {
   const removeCard = (playerName) => {
     const newCards = cards.filter((card) => card.playerName !== playerName);
     setCards(newCards);
-
-    console.log(newCards);
   };
   const updateCardScore = (playerName, action) => {
     const newCards = cards.map((card) => {
-      if (card.player === playerName) {
+      if (card.playerName === playerName) {
         return {
           ...card,
           score:
             action === "add"
               ? card.score + 1
-              : card.score > 0 && card.score - 1,
+              : card.score > 0 && card.score - 1 || 0,
         };
       }
       return card;
@@ -37,8 +35,7 @@ export default function usePlayer() {
     return card ? card.score : 0;
   };
   const sortedCards = () => {
-    const newCards = cards.sort((a, b) => b.score - a.score);
-    //setCards(newCards);
+    const newCards = cards.slice().sort((a, b) => b.score - a.score);
 
     return newCards;
   };
