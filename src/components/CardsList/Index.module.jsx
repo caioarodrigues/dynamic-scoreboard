@@ -1,8 +1,9 @@
 import { Card } from "../Card/Index.module";
-import { useCardsContext } from "../../context/CardsContext";
+import usePlayer from "../../hooks/usePlayer";
 
 export const CardsList = () => {
-  const { cards } = useCardsContext();
+  const { getCards } = usePlayer();
+  const cards = getCards();
 
   return (
     <div className="flex flex-wrap gap-2 justify-center md:justify-end pt-2 md:w-2/3">

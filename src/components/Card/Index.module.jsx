@@ -7,7 +7,7 @@ import usePlayer from "../../hooks/usePlayer";
 
 // eslint-disable-next-line react/prop-types
 export const Card = ({ playerName }) => {
-  const { removeCard, sortCards, updateCardScore } = usePlayer();
+  const { removeCard, updateCardScore } = usePlayer();
   const [score, setScore] = useState(0);
   const addScore = () => {
     setScore((prevScore) => prevScore + 1)
@@ -25,7 +25,7 @@ export const Card = ({ playerName }) => {
           {playerName}
         <div>{score} points</div>
       </div>
-      <div className="flex justify-start gap-1" onClickCapture={sortCards}>
+      <div className="flex justify-start gap-1">
         <Button name={<FaPlus />} clickHandler={addScore} />
         <Button name={<FaMinus />} clickHandler={subScore} />
         <Button name={<FaRegTrashAlt />} clickHandler={() => removeCard(playerName)} />
