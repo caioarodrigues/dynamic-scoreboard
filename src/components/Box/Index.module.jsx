@@ -6,5 +6,5 @@ export const Box = ({ children }) => {
         {children}
       </div>
     </div>
-  )
-}
+  );
+};

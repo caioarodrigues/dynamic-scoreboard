@@ -6,7 +6,7 @@ export const Table = () => {
 
   return (
     <div
-      className={`self-start text-center my-2 w-full md:w-1/3 ${
+      className={`text-center my-2 w-full md:w-1/3 ${
         _.length > 0 ? "block" : "hidden"
       }`}
     >

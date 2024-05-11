@@ -31,8 +31,8 @@ export default function usePlayer() {
   };
   const getCards = () => cards;
   const getScore = (playerName) => {
-    const card = cards.find((card) => card.player === playerName);
-    return card ? card.score : 0;
+    const card = cards.find((card) => card.playerName === playerName);
+    return card.score || 0;
   };
   const sortedCards = () => {
     const newCards = cards.slice().sort((a, b) => b.score - a.score);
