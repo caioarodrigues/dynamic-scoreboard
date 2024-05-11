@@ -19,9 +19,8 @@ export const Card = ({ playerName }) => {
   }
 
   return (
-    <div className={`w-full md:w-1/4 bg-blue-400 p-2 rounded-md flex flex-col gap-1 shadow-md border
-    border-slate-400`}>
-      <div className="bg-blue-300 rounded-md px-1 py-2 text-center font-bold">
+    <div className={`w-full md:w-1/4 bg-blue-300 p-2 rounded-md flex flex-col gap-1 shadow-md`}>
+      <div className="bg-blue-400 rounded-md px-1 py-2 text-center font-bold">
           {playerName}
         <div>{score} points</div>
       </div>

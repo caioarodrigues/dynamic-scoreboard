@@ -22,7 +22,7 @@ export default function usePlayer() {
           score:
             action === "add"
               ? card.score + 1
-              : card.score > 0 && card.score - 1 || 0,
+              : (card.score > 0 && card.score - 1) || 0,
         };
       }
       return card;
@@ -39,6 +39,19 @@ export default function usePlayer() {
 
     return newCards;
   };
+  const repeatedPlayer = (playerName) => {
+    const card = cards.some((card) => card.playerName === playerName);
 
-  return { removeCard, updateCardScore, getCards, createCard, getScore, sortedCards };
+    return card;
+  };
+
+  return {
+    removeCard,
+    updateCardScore,
+    getCards,
+    createCard,
+    getScore,
+    sortedCards,
+    repeatedPlayer,
+  };
 }
